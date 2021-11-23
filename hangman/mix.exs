@@ -5,7 +5,7 @@ defmodule Hangman.MixProject do
     [
       app: :hangman,
       version: "0.1.0",
-      elixir: "~> 1.7",
+      elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
@@ -21,7 +21,10 @@ defmodule Hangman.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:diccionario, path: "../diccionario"}
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
+      {:dictionary, "~> 0.1.0"}
+      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      # {:dep_from_hexpm, "~> 0.3.0"},
     ]
   end
 end
