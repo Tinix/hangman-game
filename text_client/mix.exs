@@ -1,27 +1,25 @@
-defmodule Hangman.MixProject do
+defmodule TextClient.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :hangman,
+      app: :text_client,
       version: "0.1.0",
-      elixir: "~> 1.10",
+      elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
   end
 
-  # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      mod: { Dictionary.Runtime.Application, [] },
       extra_applications: [:logger]
     ]
   end
 
   defp deps do
     [
-      { :dictionary,  path: "../dictionary" },
+      { :hangman, path: "../hangman" },
     ]
   end
 end

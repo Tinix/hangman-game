@@ -1,14 +1,8 @@
-defmodule Dictionary do 
+defmodule Dictionary do
 
-  
-  def word_list do
-    "assets/words.txt"
-    |> File.read!()
-    |> String.split(~r/\n/, trim: true)
-  end
+  alias Dictionary.Runtime.Server
 
-  def random_word do
-    word_list()
-    |> Enum.random()
-  end
+  @spec random_word() :: String.t
+  defdelegate random_word(), to: Server
 end
+
